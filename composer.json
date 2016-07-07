@@ -1,0 +1,33 @@
+{
+  "name": "porcelanosa/yii2-related",
+  "description": "Yii2 Extenstion",
+  "version": "dev-master",
+  "keywords": [
+    "yii",
+    "yii2",
+    "yii 2"
+  ],
+  "type": "yii2-extension",
+  "homepage": "https://github.com/porcelanosa/yii2-related",
+  "authors": [
+    {
+      "name": "Alex Porcelanosa",
+      "email": "porcelanosam@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "yiisoft/yii2": "*",
+  },
+  "autoload": {
+    "psr-4": {
+      "porcelanosa\\yii2-related\\": ""
+    }
+  },
+
+  "asset-installer-paths": {
+    "npm-asset-library": "vendor/npm",
+    "bower-asset-library": "vendor/bower"
+  }
+}
