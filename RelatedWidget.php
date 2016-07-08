@@ -53,9 +53,6 @@
 					],
 				]
 			);
-			//var_dump($this->model->getBehavior('relatedBehavior'));
-			
-			
 		}
 	}
 	

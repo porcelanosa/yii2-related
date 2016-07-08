@@ -1,6 +1,7 @@
 ### yii2-related
 Yii2 extenstions - relate the similar entities
-
+[![Latest Stable Version](https://poser.pugx.org/porcelanosa/yii2-related/v/stable)](https://packagist.org/packages/porcelanosa/yii2-related)
+[![Total Downloads](https://poser.pugx.org/porcelanosa/yii2-related/downloads)](https://packagist.org/packages/porcelanosa/yii2-related)
 ## Install 
 
 ```php
