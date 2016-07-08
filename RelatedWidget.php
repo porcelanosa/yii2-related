@@ -41,15 +41,19 @@
 			}
 			echo \kartik\select2\Select2::widget(
 				[
-					'name'    => 'related_objects',
+					'name'    => $this->behavior->post_name,
 					'data'    => $data,
 					'value'   => $this->model->relatedIdsArray,
 					'options' => [
 						'placeholder' => $this->placeholder,
-						'multiple'    => true
+						'multiple'    => true,
+						'sorter'=> 'function(data) {
+									return data.sort();
+								}'
 					],
 				]
 			);
+			//var_dump($this->model->getBehavior('relatedBehavior'));
 			
 			
 		}
