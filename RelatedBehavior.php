@@ -33,27 +33,30 @@
 				throw new InvalidConfigException( "The 'model_name' option is required. For example, 'Items'" );
 			}
 			$related_objects = Yii::$app->getRequest()->post( $this->post_name );
-			$old_related = RelatedObjects::find()->where(
+			$old_related     = RelatedObjects::find()->where(
 				[
 					'model'    => $this->modelFromNamespace( $this->model_name ),
 					'model_id' => $model->id
 				]
-			)->all();
+			)->all()
+			;
 			/**
 			 * Удаляем все связанные модели
 			 * */
-			foreach ($old_related as $old_model) {
+			foreach ( $old_related as $old_model ) {
 				$old_model->delete();
 			}
 			/**
 			 * Добавляем новые связанные модели
 			 */
-			foreach ( $related_objects as $id ) {
-				$related = new RelatedObjects;
-				$related->model =  $this->modelFromNamespace( $this->model_name );
-				$related->model_id = $model->id;
-				$related->related_id = $id;
-				$related->save();
+			if ( $related_objects AND is_array( $related_objects ) AND count( $related_objects ) > 0 ) {
+				foreach ( $related_objects as $id ) {
+					$related             = new RelatedObjects;
+					$related->model      = $this->modelFromNamespace( $this->model_name );
+					$related->model_id   = $model->id;
+					$related->related_id = $id;
+					$related->save();
+				}
 			}
 			
 		}
