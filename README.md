@@ -46,3 +46,17 @@ echo \porcelanosa\yii2related\RelatedWidget::widget(
     ]
 );
 ```
+
+## Usage
+Get related models
+
+```php
+<?
+use yii\helpers\Html;
+$brand = Brands::findOne(1);
+foreach($brand->related as $rel) { 
+    echo Html::a($rel->name, $rel->slug); 
+    echo '<br>';
+}
+?>
+```
