@@ -19,6 +19,7 @@
 		public $model_id_field_name = 'id';
 		public $model_name_field_name = 'name';
 		public $post_name = 'related_objects';
+		public $whereCondition = '1=1';
 		
 		public function events() {
 			return [
@@ -131,7 +132,7 @@
 			 */
 			$m = new $this->model_name();
 			
-			$all = $m::find()->select( [ 'id', 'name' ] )->asArray()->all();
+			$all = $m::find()->select( [ 'id', 'name' ] )->where($this->whereCondition)->asArray()->all();
 			
 			return $this->flatArray2( $all, 'id', 'name' );
 		}

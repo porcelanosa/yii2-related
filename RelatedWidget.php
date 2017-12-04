@@ -34,6 +34,9 @@
 		public function run() {
 			
 			$m = new $this->model_name();
+			/**
+			 * @var $m ActiveRecord
+			 */
 			$data = $m->allAsArray;
 			// Without model and implementing a multiple select
 			if($this->title != '') {

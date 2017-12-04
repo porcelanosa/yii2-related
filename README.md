@@ -27,7 +27,8 @@ public function behaviors()
             'model_name' => $this::className(),
             'model_id_field_name' => 'id', 
             'model_name_field_name' => 'name',
-            'post_name' => 'related_objects'
+            'post_name' => 'related_objects',
+            'whereCondition' => 'deleted!=1' // Conditions for list of related entities
         ],
     ......
     ]
